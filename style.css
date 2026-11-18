@@ -1,0 +1,358 @@
+/* Agata Świrska, Jane Munywoki */
+/*  Colour palette  */
+:root {
+  --primary: #190F0A;    /* espresso brown, same as the logo outline: text, contact section */
+  --secondary: #756255;  /* warm taupe: prices, step numbers, and focus states */
+  --background: #F5EDE3; /* cream, same as the inside of the logo */
+  --accent: #472C1C;     /* leather brown: buttons and links */
+  --white: #FFFFFF;
+  --button-label: var(--white);
+  --badge-label: var(--white);
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --primary: #F5EDE3;
+  --secondary: #C0A995;
+  --background: #190F0A;
+  --accent: #C9956B;
+  --button-label: #190F0A;
+  --badge-label: #190F0A;
+  color-scheme: dark;
+}
+
+/*  Base  */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--primary);
+  font-family: "Nunito", "Segoe UI", Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: "Fredoka", "Trebuchet MS", sans-serif;
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+}
+
+h1 { font-size: clamp(2.4rem, 6vw, 4rem); }
+h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); }
+h3 { font-size: 1.35rem; font-weight: 500; }
+
+p { margin: 0 0 1em; }
+
+a { color: var(--accent); }
+
+a:focus-visible,
+.theme-toggle:focus-visible {
+  outline: 3px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+main > section {
+  padding: clamp(3.5rem, 7vw, 5rem) 1.5rem;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.section-intro {
+  max-width: 60ch;
+  margin-bottom: 2.5rem;
+}
+
+/*  Header and navigation  */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--background);
+  border-bottom: 2px solid var(--primary);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--primary);
+  text-decoration: none;
+  font-family: "Fredoka", "Trebuchet MS", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.site-header ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-header nav a {
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-header nav a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--secondary);
+  text-underline-offset: 4px;
+}
+
+.site-header nav .nav-cta {
+  background: var(--accent);
+  color: var(--button-label);
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+}
+
+.site-header nav .nav-cta:hover {
+  background: var(--primary);
+  text-decoration: none;
+}
+
+.theme-toggle {
+  min-height: 44px;
+  padding: 0.45rem 0.9rem;
+  border: 2px solid var(--primary);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--primary);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.theme-toggle:hover {
+  background: var(--primary);
+  color: var(--background);
+}
+
+.contact-logo {
+  margin: 0 auto 1.5rem;
+}
+
+/*  Buttons  */
+.button {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--button-label);
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.9rem 1.8rem;
+  border-radius: 999px;
+}
+
+.site-header nav .nav-cta,
+.button {
+  transition: background-color 160ms ease, color 160ms ease, transform 100ms ease;
+}
+
+.button:hover {
+  background: var(--primary);
+}
+
+.button:active,
+.site-header nav .nav-cta:active {
+  transform: translateY(1px);
+}
+
+.button-light {
+  background: var(--background);
+  color: var(--primary);
+}
+
+.button-light:hover {
+  background: var(--secondary);
+  color: var(--button-label);
+}
+
+/*  Hero  */
+.hero {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  align-items: center;
+  gap: 2rem;
+  min-height: 80vh;
+}
+
+.hero-text p {
+  font-size: 1.25rem;
+  max-width: 34ch;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.hero-actions .link {
+  font-weight: 700;
+}
+
+.trail {
+  width: 100%;
+  max-width: 300px;
+  justify-self: center;
+  fill: var(--secondary);
+}
+
+/*  Services  */
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.service {
+  border-top: 4px solid var(--primary);
+  padding-top: 1.25rem;
+}
+
+.price {
+  font-family: "Fredoka", "Trebuchet MS", sans-serif;
+  font-size: 1.3rem;
+  color: var(--secondary);
+  margin: 0;
+}
+
+/*  How it works  */
+.steps {
+  list-style: none;
+  counter-reset: step;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 2rem 0 0;
+  padding: 0;
+}
+
+.steps li {
+  counter-increment: step;
+}
+
+.steps li::before {
+  content: counter(step);
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  background: var(--secondary);
+  color: var(--badge-label);
+  font-family: "Fredoka", "Trebuchet MS", sans-serif;
+  font-size: 1.4rem;
+}
+
+/* Why us  */
+.reasons {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+  max-width: 62ch;
+}
+
+.reasons li {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--secondary);
+}
+
+.reasons strong {
+  font-family: "Fredoka", "Trebuchet MS", sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  display: block;
+}
+
+/*  Contact  */
+main > section.contact {
+  max-width: none;
+  background: var(--primary);
+  color: var(--background);
+  text-align: center;
+}
+
+.contact > p {
+  max-width: 48ch;
+  margin: 0 auto 2rem;
+}
+
+.contact address {
+  font-style: normal;
+  margin-top: 3rem;
+}
+
+.contact address p {
+  margin: 0 0 0.4rem;
+}
+
+.contact address a {
+  color: var(--background);
+}
+
+/* Footer */
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* Mobile */
+@media (max-width: 760px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .trail {
+    max-width: 160px;
+    order: -1;
+  }
+
+  .service-list,
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  main > section {
+    padding: clamp(3rem, 7vw, 3.5rem) 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle {
+    transition: none;
+  }
+}

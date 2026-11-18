@@ -1,0 +1,240 @@
+<!-- Agata Świrska, Jane Munywoki -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Heel To Toe</title>
+        <meta name="description" content="Heel To Toe is a shoe repair workshop in Szczecin offering heel and sole repairs, cleaning, polishing, stretching, and custom insoles.">
+        <link rel="icon" href="Images/logo-dark.svg" type="image/svg+xml">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <style>
+            :root {
+                --primary: #190F0A;
+                --secondary: #756255;
+                --background: #F5EDE3;
+                --accent: #472C1C;
+                --white: #FFFFFF;
+                --button-label: var(--white);
+                color-scheme: light;
+            }
+
+            :root[data-theme="dark"] {
+                --primary: #F5EDE3;
+                --secondary: #C0A995;
+                --background: #190F0A;
+                --accent: #C9956B;
+                --button-label: #190F0A;
+                color-scheme: dark;
+            }
+
+            * { box-sizing: border-box; }
+            html { scroll-behavior: smooth; }
+            body {
+                margin: 0;
+                background: var(--background);
+                color: var(--primary);
+                font-family: "Nunito", "Segoe UI", Arial, sans-serif;
+                font-size: 1.0625rem;
+                line-height: 1.6;
+            }
+            h1, h2, h3 {
+                margin: 0 0 0.5em;
+                font-family: "Fredoka", "Trebuchet MS", sans-serif;
+                font-weight: 600;
+                line-height: 1.15;
+            }
+            h1 { font-size: clamp(2.4rem, 6vw, 4rem); }
+            a { color: var(--accent); }
+            a:focus-visible, .theme-toggle:focus-visible {
+                outline: 3px solid var(--secondary);
+                outline-offset: 3px;
+            }
+            main > section {
+                max-width: 1080px;
+                margin: 0 auto;
+                padding: clamp(3.5rem, 7vw, 5rem) 1.5rem;
+            }
+            .site-header {
+                position: sticky;
+                top: 0;
+                z-index: 10;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+                gap: 1rem;
+                padding: 0.75rem 1.5rem;
+                background: var(--background);
+                border-bottom: 2px solid var(--primary);
+            }
+            .brand {
+                display: flex;
+                align-items: center;
+                gap: 0.6rem;
+                color: var(--primary);
+                font-family: "Fredoka", "Trebuchet MS", sans-serif;
+                font-size: 1.5rem;
+                font-weight: 600;
+                text-decoration: none;
+            }
+            .site-header ul {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 0.5rem 1.5rem;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+            .site-header nav a {
+                color: var(--primary);
+                font-weight: 700;
+                text-decoration: none;
+            }
+            .site-header nav .nav-cta {
+                padding: 0.5rem 1.1rem;
+                border-radius: 999px;
+                background: var(--accent);
+                color: var(--button-label);
+            }
+            .theme-toggle {
+                min-height: 44px;
+                padding: 0.45rem 0.9rem;
+                border: 2px solid var(--primary);
+                border-radius: 999px;
+                background: transparent;
+                color: var(--primary);
+                font: inherit;
+                font-weight: 700;
+            }
+            .hero {
+                display: grid;
+                grid-template-columns: 1.4fr 1fr;
+                align-items: center;
+                gap: 2rem;
+                min-height: 80vh;
+            }
+            .hero-text p { max-width: 34ch; font-size: 1.25rem; }
+            .hero-actions {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 1.5rem;
+                margin-top: 2rem;
+            }
+            .hero-actions .link { font-weight: 700; }
+            .button {
+                display: inline-block;
+                padding: 0.9rem 1.8rem;
+                border-radius: 999px;
+                background: var(--accent);
+                color: var(--button-label);
+                font-weight: 700;
+                text-decoration: none;
+            }
+            @media (max-width: 760px) {
+                .hero { grid-template-columns: 1fr; min-height: auto; }
+                main > section { padding: clamp(3rem, 7vw, 3.5rem) 1.25rem; }
+            }
+        </style>
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&amp;family=Nunito:wght@400;500;600;700&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&amp;family=Nunito:wght@400;500;600;700&amp;display=swap"></noscript>
+        <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="style.css"></noscript>
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <header class="site-header">
+  <a href="#top" class="brand">
+    <img src="Images/logo-dark.svg" data-light-src="Images/logo-dark.svg" data-dark-src="Images/logo-light.svg" alt="" width="56" height="56" class="logo">
+    <span>Heel To Toe</span>
+  </a>
+  <nav aria-label="Main menu">
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#why">Why us</a></li>
+      <li><a href="#contact" class="nav-cta">Book a repair</a></li>
+    </ul>
+  </nav>
+  <button class="theme-toggle" type="button" aria-pressed="false">Dark mode</button>
+</header>
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Your favourite shoes deserve a second life.</h1>
+      <p>Heel To Toe is a small shoe workshop. We fix worn heels, loose soles and tired leather, so you can keep walking in the shoes you already love.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="button">Book a repair</a>
+        <a href="#services" class="link">See services and prices</a>
+      </div>
+    </div>
+  </section>
+<section id="services" class="services">
+  <h2>What we do</h2>
+  <p class="section-intro">Bring us any pair: sneakers, office shoes, boots or heels.</p>
+  <div class="service-list">
+    <article class="service">
+      <h3>Heel and sole repair</h3>
+      <p>New heel tips, resoling and glued or stitched soles that hold for years, not weeks.</p>
+      <p class="price">from 40 zł</p>
+    </article>
+    <article class="service">
+      <h3>Cleaning and polishing</h3>
+      <p>Deep cleaning for sneakers and a proper polish for leather, so your shoes look new again.</p>
+      <p class="price">from 30 zł</p>
+    </article>
+    <article class="service">
+      <h3>Fit and comfort</h3>
+      <p>Shoe stretching and custom insoles for pairs that pinch, slip or make your feet ache.</p>
+      <p class="price">from 50 zł</p>
+    </article>
+  </div>
+</section>
+<section id="how" class="how">
+  <h2>How it works</h2>
+  <ol class="steps">
+    <li>
+      <h3>Book online</h3>
+      <p>Send us a message with a photo of your shoes and we will reply with a price.</p>
+    </li>
+    <li>
+      <h3>Drop them off</h3>
+      <p>Bring your shoes to the workshop at a time that suits you.</p>
+    </li>
+    <li>
+      <h3>Walk away happy</h3>
+      <p>Most repairs are ready in 3 to 5 days. We text you when they are done.</p>
+    </li>
+  </ol>
+</section>
+<section id="why" class="why">
+  <h2>Why Heel To Toe?</h2>
+  <ul class="reasons">
+    <li><strong>Repair before replace.</strong> We only recommend new shoes when a repair truly isn't worth it.</li>
+    <li><strong>Clear prices.</strong> You know the price before we start. No surprises at pick-up.</li>
+    <li><strong>Student discount.</strong> 15% off every service with a valid student ID.</li>
+  </ul>
+</section>
+<section id="contact" class="contact">
+  <img src="Images/logo-light.svg" data-light-src="Images/logo-light.svg" data-dark-src="Images/logo-dark.svg" alt="Heel To Toe logo" width="160" height="160" class="logo contact-logo">
+  <h2>Ready to save your shoes?</h2>
+  <p>Send us a short message with a photo of your shoes. We reply within one working day.</p>
+  <a href="mailto:hello@heeltotoe.pl?subject=Repair%20request" class="button button-light">Book a repair by email</a>
+  <address>
+    <p><strong>Email:</strong> <a href="mailto:hello@heeltotoe.pl">hello@heeltotoe.pl</a></p>
+    <p><strong>Phone:</strong> <a href="tel:+48123456789">+48 123 456 789</a></p>
+    <p><strong>Workshop:</strong> ul. Example 12, 00-001 Szczecin</p>
+    <p><strong>Open:</strong> Monday to Friday 9:00–18:00, Saturday 10:00–14:00</p>
+  </address>
+</section>
+</main>
+<footer class="site-footer">
+  <p>&copy; 2026 Heel To Toe · heeltotoe.pl</p>
+  <p><a href="#top">Back to top</a></p>
+</footer>
+    </body>
+</html>
