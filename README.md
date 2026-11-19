@@ -4,13 +4,13 @@
 
 ## Info
 
-Business name: Heel to Toe (helltotoe.pl)
+Business name: Heel To Toe (heeltotoe.pl)
 Service: Shoe repair and care
 Target Audience: All people that don’t want to buy new shoes and take care of the ones they
         have
-Services: Heel and sole reapir, cleaning and polishing, stretching, custom insoles
+Services: Heel and sole repair, cleaning and polishing, stretching, custom insoles
 Aspects: people don’t have to buy new shoes for the whole price, but repair the current ones
-        for much lower price, clear prices before the repairment starts/cleaning starts, booking a
+        for a much lower price, clear prices before the repair or cleaning starts, booking a
         repair option (customer can send a photo of a damaged shoe and book a repair/cleaning
         visit ahead of time without physically coming to the store.
 
@@ -26,6 +26,10 @@ Aspects: people don’t have to buy new shoes for the whole price, but repair th
 ## Colour palette
 
 - Primary: #190F0A (dark brown) – text and contact section
-- Secondary: #887568 (warm brown) – prices and step numbers
+- Secondary: #756255 (warm taupe) – prices and step numbers
 - Background: #F5EDE3 (cream) – background
 - Accent: #472C1C (leather brown) – buttons and links
+
+## Hero illustration
+
+The hero image is an inline SVG (boot, new heel and cobbler's hammer) drawn with the palette's CSS variables, so it changes colour in dark mode automatically.

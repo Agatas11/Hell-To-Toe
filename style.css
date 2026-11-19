@@ -150,6 +150,7 @@ main > section {
 }
 
 .contact-logo {
+  display: block;
   margin: 0 auto 1.5rem;
 }
 
@@ -214,11 +215,44 @@ main > section {
   font-weight: 700;
 }
 
-.trail {
+.hero-art {
   width: 100%;
-  max-width: 300px;
+  max-width: 420px;
   justify-self: center;
-  fill: var(--secondary);
+}
+
+.hero-art .art-backdrop { fill: var(--secondary); opacity: 0.18; }
+.hero-art .art-shadow   { fill: var(--primary); opacity: 0.15; }
+.hero-art .art-boot path,
+.hero-art .art-hammer rect {
+  stroke: var(--primary);
+  stroke-width: 6;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.hero-art .art-leather { fill: var(--accent); }
+.hero-art .art-tab     { fill: var(--accent); }
+.hero-art .art-elastic { fill: var(--secondary); }
+.hero-art .art-sole,
+.hero-art .art-heel    { fill: var(--primary); }
+.hero-art .art-stitch {
+  stroke: var(--background);
+  stroke-width: 3;
+  stroke-dasharray: 8 7;
+  stroke-linecap: round;
+}
+.hero-art .art-boot .art-shine {
+  fill: none;
+  stroke: var(--background);
+  stroke-width: 5;
+  opacity: 0.55;
+}
+.hero-art .art-handle { fill: var(--secondary); }
+.hero-art .art-metal  { fill: var(--background); }
+.hero-art .art-sparkle { fill: var(--secondary); }
+
+.hero-actions .link:hover {
+  text-decoration-thickness: 3px;
 }
 
 /*  Services  */
@@ -336,8 +370,8 @@ main > section.contact {
     min-height: auto;
   }
 
-  .trail {
-    max-width: 160px;
+  .hero-art {
+    max-width: 240px;
     order: -1;
   }
 

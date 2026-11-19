@@ -9,6 +9,7 @@ function applyTheme(theme) {
 
   document.documentElement.dataset.theme = theme;
   themeToggle.setAttribute("aria-pressed", String(isDark));
+  themeToggle.textContent = isDark ? "Light mode" : "Dark mode";
   themeImages.forEach((image) => {
     image.src = image.dataset[isDark ? "darkSrc" : "lightSrc"];
   });
